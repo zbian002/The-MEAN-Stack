@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { FormsModule } from '@angular/forms';
-import { 
-  MatInputModule, 
-  MatCardModule, 
+import {
+  MatInputModule,
+  MatCardModule,
   MatButtonModule,
   MatToolbarModule,
   MatExpansionModule
@@ -35,6 +35,6 @@ import { PostListComponent } from './posts/post-list/post-list.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }
