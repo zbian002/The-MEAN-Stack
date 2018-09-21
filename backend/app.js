@@ -8,7 +8,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://Zhen:Tw2588990516!@cluster0-2znjb.mongodb.net/node-angular?retryWrites=true"
+    "mongodb+srv://Zhen:Tw2588990516!@cluster0-2znjb.mongodb.net/test?retryWrites=true"
   )
   .then(() => {
     console.log("Connected to database!");
@@ -38,9 +38,11 @@ app.post("/api/posts", (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   });
-  post.save();
-  res.status(201).json({
-    message: "Post added successfully"
+  post.save().then(createdPost => {
+    res.status(201).json({
+      message: "Post added successfully",
+      postId: createdPost._id
+    });
   });
 });
 
